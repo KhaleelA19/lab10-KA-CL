@@ -1,3 +1,7 @@
+# https://github.com/KhaleelA19/lab10-KA-CL.git
+# Partner 1: Khaleel Abiru
+# Partner 2: Camila Lipson
+
 import math
 
 def add(a,b):
