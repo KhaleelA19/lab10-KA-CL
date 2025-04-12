@@ -1,6 +1,5 @@
 import unittest
 import math
-
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
@@ -30,6 +29,32 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(square_root(2),math.sqrt(2))
         with self.assertRaises(ValueError):
             square_root(-1)
+
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(0, 0), 0)
+
+    def test_subtract(self):
+        self.assertEqual(subtract(10, 5), 5)
+        self.assertEqual(subtract(0, 5), -5)
+        self.assertEqual(subtract(3, 3), 0)
+
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            divide(10, 0)
+
+    def test_logarithm(self):
+        self.assertAlmostEqual(logarithm(8, 2), 3.0)
+        self.assertAlmostEqual(logarithm(100, 10), 2.0)
+
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            logarithm(10, -2)
+        with self.assertRaises(ValueError):
+            logarithm(10, 0)
+
+
 
 if __name__ == '__main__':
     unittest.main()
