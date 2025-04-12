@@ -24,4 +24,3 @@ def logarithm(a,b):
     return math.log(b,a)
 def exponent(a,b):
     return a**b
-    print("Camnila is my partner")
