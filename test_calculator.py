@@ -8,14 +8,14 @@ from calculator import *
 
 class TestCalculator(unittest.TestCase):
     def test_multiply(self):
-        self.assertEqual(multiply(1,2), 2)
-        self.assertAlmostEqual(multiply(1.1,2), 2.2)
-        self.assertAlmostEqual(multiply(-1,2), -2)
+        self.assertEqual(mul(1,2), 2)
+        self.assertAlmostEqual(mul(1.1,2), 2.2)
+        self.assertAlmostEqual(mul(-1,2), -2)
     def test_divide(self):
-        self.assertEqual(divide(4,2), 2)
-        self.assertAlmostEqual(divide(5,2.5), 2.0)
-        self.assertAlmostEqual(divide(-4.2,-2.1), 2.0)
-        with self.assertRaises(ZeroDivisionError): divide(0,2)
+        self.assertEqual(div(4,2), 0.5)
+        self.assertAlmostEqual(div(5,2.5), 0.5)
+        self.assertAlmostEqual(div(-4.2,-2.1), 0.5)
+        with self.assertRaises(ZeroDivisionError): div(0,2)
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
             logarithm(2, 0)
@@ -46,11 +46,11 @@ class TestCalculator(unittest.TestCase):
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
-            div(10, 0)
+            div(0, 10)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(logarithm(8, 2), 3.0)
-        self.assertAlmostEqual(logarithm(100, 10), 2.0)
+        self.assertAlmostEqual(logarithm(8, 2), 1/3)
+        self.assertAlmostEqual(logarithm(100, 10), 0.5)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
