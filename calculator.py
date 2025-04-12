@@ -14,10 +14,10 @@ def subtract(a,b):
 def multiply(a,b):
     return a*b
 def divide(a,b):
-    if a > 0:
-        return b/a
+    if a == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
     else:
-        raise ValueError("Cannot divide by zero")
+        return b/a
 def logarithm(a,b):
     if b <= 0 or a <= 1:
             raise ValueError("Base must be greater than 1 and Argument must be greater than 0")
